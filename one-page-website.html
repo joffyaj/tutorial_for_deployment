@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en"><head><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>One‑Page Website — Clean &amp; Modern</title>
+  <meta name="description" content="A responsive one-page website template with smooth scrolling, a hero, features, portfolio and contact form.">
+  <style>
+    :root{
+      --bg:#0f1724; /* deep slate */
+      --card:#0b1220;
+      --accent:linear-gradient(90deg,#6ee7b7,#60a5fa);
+      --glass: rgba(255,255,255,0.04);
+      --muted: #94a3b8;
+      --radius:14px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; background:var(--bg); color:#e6eef8;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    header{position:sticky;top:12px;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;margin:0 14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;backdrop-filter: blur(6px)}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;color:#052b38}
+    nav{display:flex;gap:14px;align-items:center}
+    .nav-link{font-size:14px;padding:8px 10px;border-radius:10px;color:var(--muted)}
+    .nav-link:hover{color:#fff;background:rgba(255,255,255,0.03)}
+
+    /* Hero */
+    .hero{min-height:72vh;display:grid;align-items:center;padding:48px 20px}
+    .container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:28px}
+    .hero-content{padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    h1{font-size:clamp(24px,5vw,42px);margin:0 0 8px}
+    p.lead{color:var(--muted);margin:0 0 16px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:10px 16px;border-radius:12px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--accent);color:#022;box-shadow:0 8px 20px rgba(92,165,255,0.08)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* features */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* portfolio */
+    .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .thumb{height:140px;border-radius:10px;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--muted)}
+
+    /* contact */
+    form{display:grid;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:10px;color:#e6eef8}
+    textarea{min-height:110px;resize:vertical}
+
+    footer{padding:28px 20px;text-align:center;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:900px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      header{flex-direction:column;gap:10px}
+      .container{padding:8px}
+      .grid{grid-template-columns:1fr}
+      .portfolio-grid{grid-template-columns:1fr}
+    }
+
+    /* simple animation */
+    .fade-up{opacity:0;transform:translateY(10px);transition:all 650ms cubic-bezier(.2,.9,.3,1)}
+    .fade-up.show{opacity:1;transform:none}
+
+  </style>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1261.0" data-gr-ext-installed="">
+  <header>
+    <div class="brand">
+      <div class="logo">WP</div>
+      <div>
+        <div style="font-weight:700">WavePoint</div>
+        <div style="font-size:12px;color:var(--muted)">Clean single-file template</div>
+      </div>
+    </div>
+    <nav aria-label="Main navigation">
+      <a class="nav-link" href="#hero">Home</a>
+      <a class="nav-link" href="#features">Features</a>
+      <a class="nav-link" href="#work">Work</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero-content fade-up show" data-delay="0">
+          <h1>Beautiful, fast &amp; responsive one‑page website</h1>
+          <p class="lead">A starter template you can customise. Lightweight, accessible and built as a single HTML file — great for landing pages, portfolios, or small apps.</p>
+          <div class="cta-row">
+            <button class="btn btn-primary" id="downloadBtn">Download HTML</button>
+            <a class="btn btn-ghost" href="#work">See work</a>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px">
+          <div class="card small fade-up show" data-delay="120"><strong>Performance</strong><div style="margin-top:6px">Minimal CSS &amp; no external libs — fast to load.</div></div>
+          <div class="card small fade-up show" data-delay="240"><strong>Responsive</strong><div style="margin-top:6px">Looks great on phones, tablets and desktops.</div></div>
+          <div class="card small fade-up show" data-delay="360"><strong>Customisable</strong><div style="margin-top:6px">Easy to tweak colours, fonts and layout.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" style="padding:36px 20px">
+      <div class="container">
+        <h2 style="margin:0 0 12px">Features</h2>
+        <p class="small" style="margin:0 0 18px">What you get out of the box</p>
+        <div class="grid">
+          <div class="card fade-up show" data-delay="0">
+            <h3 style="margin:0 0 8px">Modern UI</h3>
+            <p class="small">Clean components and readable typography for maximum clarity.</p>
+          </div>
+          <div class="card fade-up show" data-delay="120">
+            <h3 style="margin:0 0 8px">Accessibility</h3>
+            <p class="small">Semantic tags and good contrast — a solid starting point for improvements.</p>
+          </div>
+          <div class="card fade-up show" data-delay="240">
+            <h3 style="margin:0 0 8px">Easy Deployment</h3>
+            <p class="small">Single file is easy to host anywhere — GitHub Pages, Netlify or your server.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" style="padding:36px 20px">
+      <div class="container">
+        <h2 style="margin:0 0 12px">Selected Work</h2>
+        <p class="small" style="margin:0 0 18px">A quick preview</p>
+        <div class="portfolio-grid">
+          <div class="thumb fade-up" data-delay="0">Project A</div>
+          <div class="thumb fade-up" data-delay="80">Project B</div>
+          <div class="thumb fade-up" data-delay="160">Project C</div>
+          <div class="thumb fade-up" data-delay="240">Project D</div>
+          <div class="thumb fade-up" data-delay="320">Project E</div>
+          <div class="thumb fade-up" data-delay="400">Project F</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="padding:36px 20px">
+      <div class="container">
+        <h2 style="margin:0 0 12px">Contact</h2>
+        <p class="small" style="margin:0 0 18px">Send a message — this demo uses client-side validation only.</p>
+        <div class="card" style="padding:18px">
+          <form id="contactForm">
+            <input id="name" placeholder="Your name" required="">
+            <input id="email" placeholder="Your email" type="email" required="">
+            <textarea id="message" placeholder="Message" required=""></textarea>
+            <div style="display:flex;gap:10px;align-items:center">
+              <button class="btn btn-primary" type="submit">Send message</button>
+              <div id="formStatus" style="font-size:13px;color:var(--muted)"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div style="max-width:900px;margin:0 auto;padding:8px 16px">© <span id="year">2025</span> WavePoint • Built with a single HTML file • <span style="color:var(--muted)">Made for speed</span></div>
+  </footer>
+
+  <script>
+    // small helper: reveal animations on scroll
+    const shows = document.querySelectorAll('.fade-up');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(ent=>{
+        if(ent.isIntersecting){
+          const el = ent.target;
+          const d = el.dataset.delay || 0;
+          setTimeout(()=>el.classList.add('show'), Number(d));
+          io.unobserve(el);
+        }
+      })
+    },{threshold:0.12});
+    shows.forEach(s=>io.observe(s));
+
+    // download the current HTML file
+    document.getElementById('downloadBtn').addEventListener('click',()=>{
+      const html = '<!doctype html>\n' + document.documentElement.outerHTML;
+      const blob = new Blob([html],{type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'one-page-website.html';
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    // simple form handling (client side only)
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', e=>{
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name||!email||!message){ status.textContent='Please fill all fields.'; return }
+      status.textContent='Message ready to send (demo only).';
+      form.reset();
+      setTimeout(()=>status.textContent='Thanks — I will get back to you!',900);
+    });
+
+    // fill year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // smooth scrolling for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(href.startsWith('#')){
+          e.preventDefault();
+          const t = document.querySelector(href);
+          if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      })
+    });
+  </script>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
